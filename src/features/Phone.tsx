@@ -1,4 +1,4 @@
-import { Html, ContactShadows, PresentationControls, Float, Environment, useGLTF } from '@react-three/drei'
+import { Html, ContactShadows, PresentationControls, Environment, useGLTF } from '@react-three/drei'
 
 export default function Phone() {
     const iphoneX = useGLTF("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf")
