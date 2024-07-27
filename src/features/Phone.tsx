@@ -27,8 +27,8 @@ export default function Phone() {
                     // rotation-x={- 0.1}
                     // rotation-={- 0.1}
                 >
-                        <iframe className="w-[315px] h-[655px] bg-black rounded-[43px]"
-                            title='Asahi kuroki Website' src="https://ash-kuroki.dev" />
+                    <iframe className="w-[315px] h-[655px] bg-black rounded-[43px]"
+                        title='Asahi kuroki Website' src="https://ash-kuroki.dev" />
                 </Html>
             </primitive>
             {/* <Float rotationIntensity={0.4}>
