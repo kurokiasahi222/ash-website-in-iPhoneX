@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import { Html, ContactShadows, PresentationControls, Environment, useGLTF } from '@react-three/drei'
 import { useThree } from '@react-three/fiber';
-import { Box3, Vector3 } from 'three';
 import "./styles.css"
 
 export default function Phone() {
