@@ -8,18 +8,18 @@ function App() {
     <>
       <Canvas className="canvas"
         camera={{
-          fov: 50,
+          fov: 50, // default = 50
           near: 0.1,
           far: 2000,
-          position: [0, 0.3, 4]
-        }}
+          position: [0, 0.3, 4]  // default z = 4
+        }} 
       >
         <Phone />
       </Canvas>
-      <div className="phone">
+      {/* <div className="phone">
         This app is currently only available on ipad or desktop... <br/>
         I am working to make it work on mobile
-      </div>
+      </div> */}
     </>
   )
 }
