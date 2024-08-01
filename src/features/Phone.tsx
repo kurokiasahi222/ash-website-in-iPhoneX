@@ -1,12 +1,13 @@
 import { Html, ContactShadows, PresentationControls, Environment, useGLTF } from '@react-three/drei'
 import { useThree } from '@react-three/fiber';
-import "./styles.css"
 
 export default function Phone() {
     const iphoneX = useGLTF("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf");
-    
     const { size } = useThree();
-    const isMobile = size.width < 600;
+    let isMobile = false;
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && size.width < 600) {
+        isMobile = true;
+    }
     return (
         <>
             <color args={['#241a1a']} attach="background" />
@@ -18,31 +19,32 @@ export default function Phone() {
                 azimuth={[-0.6, 0.6]}
                 config={{ mass: 2, tension: 400 }}
                 snap={{ mass: 10, tension: 200 }}
-            >
+            > 
+            {/* <mesh> */}
                 <primitive
                     object={iphoneX.scene}
-                    position-y={-1.4} 
-                    position-x={-0.15} 
+                    // position-y={-1.4}
+                    position-y={-1.5}
+                    position-x={-0.15}
                 >
                     <Html
+                        center
                         transform
                         wrapperClass='htmlScreen'
                         distanceFactor={2}
                         position={isMobile ? [0.17, 1.47, 0.05] : [0.17, 1.32, 0.05]}
-                    // rotation-x={- 0.1}
-                    // rotation-={- 0.1}
                     >
                         <div className="size">
-                            <iframe className="h-[655px] bg-black rounded-[37px]"
-                                title='Asahi kuroki Website' src="https://ash-kuroki.dev" />
+                            <iframe className="min-h-[655px] bg-black rounded-[37px]"
+                                title='Asahi kuroki Website' 
+                                src="https://ash-kuroki.dev"
+                                sandbox="allow-scripts allow-same-origin" 
+                                
+                            />
                         </div>
-                       
                     </Html>
                 </primitive>
-                {/* <Float rotationIntensity={0.4}>
-                
-
-            </Float> */}
+            {/* </mesh> */}
             </PresentationControls>
             <ContactShadows
                 position-y={-2}
